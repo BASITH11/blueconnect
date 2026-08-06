@@ -1230,33 +1230,37 @@ button {
 /* ==========================================================================
    11. Form panel & Contact Section
    Section Background: Soft Mint Blue (#F1FCFB)
-   Form Panel: --panel-grad (#7BB4C0 → #6B8FD4 → #5C7BD0)
+   Minimal Standard Form Card
    ========================================================================== */
 
 #contact {
+  position: relative;
   background: var(--bg-soft-mint-blue, #F1FCFB);
   border-block: 1px solid rgb(255 255 255 / 0.8);
+  padding-block: clamp(3.5rem, 6vw, 5.5rem);
 }
 
 .form-wrap {
-  max-width: 40rem;
+  max-width: 36rem;
   margin-inline: auto;
-  padding: clamp(1.5rem, 4vw, 2.5rem);
-  background: var(--panel-grad); /* #7BB4C0 → #6B8FD4 → #5C7BD0 */
+  padding: clamp(1.75rem, 4vw, 2.75rem);
+  background: rgb(255 255 255 / 0.95);
+  border: 1px solid var(--glass-border);
   border-radius: var(--radius-xl);
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 16px 40px rgb(38 34 60 / 0.06);
 }
 
 @supports (backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px)) {
   .form-wrap {
-    backdrop-filter: var(--glass-blur);
-    -webkit-backdrop-filter: var(--glass-blur);
+    background: rgb(255 255 255 / 0.9);
+    backdrop-filter: blur(16px) saturate(1.2);
+    -webkit-backdrop-filter: blur(16px) saturate(1.2);
   }
 }
 
 .form { display: grid; gap: var(--space-5); }
 
-.form__row { display: grid; gap: var(--space-5); }
+.form__row { display: grid; gap: var(--space-4); }
 
 @media (min-width: 640px) {
   .form__row { grid-template-columns: 1fr 1fr; }
@@ -1264,30 +1268,29 @@ button {
 
 .field { display: grid; gap: var(--space-2); }
 
-/* Contrast verification: White text on panel gradient = 5.8:1 > 4.5:1 AA floor */
 .field__label,
 .legend {
   font-family: var(--font-heading);
   font-weight: var(--weight-semibold);
   font-size: var(--text-sm);
-  color: var(--white);
+  color: var(--color-heading);
 }
 
-.field__req { color: #FFE600; font-weight: var(--weight-bold); }
+.field__req { color: var(--blue-600); font-weight: var(--weight-bold); }
 
 .input,
 .textarea {
   width: 100%;
-  padding: 0.8125rem 1rem;
+  padding: 0.75rem 1rem;
   font: inherit;
   font-size: var(--text-base);
   color: var(--ink-900);
-  background: var(--panel-field-bg); /* rgb(255 255 255 / 0.92) */
-  border: 1px solid rgb(255 255 255 / 0.7);
+  background: var(--white);
+  border: 1.5px solid var(--color-border-strong);
   border-radius: var(--radius-md);
+  box-shadow: inset 0 1px 2px rgb(0 0 0 / 0.03);
   transition: border-color var(--dur-fast) var(--ease-out),
-              box-shadow var(--dur-fast) var(--ease-out),
-              background-color var(--dur-fast) var(--ease-out);
+              box-shadow var(--dur-fast) var(--ease-out);
 }
 
 .input::placeholder,
@@ -1297,11 +1300,11 @@ button {
 .textarea:focus {
   outline: none;
   background: var(--white);
-  border-color: var(--white);
-  box-shadow: 0 0 0 3px rgb(255 255 255 / 0.45);
+  border-color: var(--blue-600);
+  box-shadow: 0 0 0 3.5px rgb(61 99 230 / 0.18);
 }
 
-.textarea { min-height: 6.5rem; resize: vertical; }
+.textarea { min-height: 5.5rem; resize: vertical; }
 
 .fieldset {
   display: grid;
@@ -1323,18 +1326,22 @@ button {
   display: flex;
   align-items: center;
   gap: var(--space-3);
-  padding: var(--space-4);
-  font-size: var(--text-base);
+  padding: 0.75rem 1rem;
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
   color: var(--ink-800);
-  background: var(--panel-field-bg); /* 0.92 white */
-  border: 1px solid rgb(255 255 255 / 0.7);
+  background: var(--white);
+  border: 1.5px solid var(--color-border-strong);
   border-radius: var(--radius-md);
   cursor: pointer;
   transition: border-color var(--dur-fast) var(--ease-out),
               background-color var(--dur-fast) var(--ease-out);
 }
 
-.radio:hover { background: var(--white); }
+.radio:hover {
+  border-color: var(--blue-500);
+  background: var(--bg-soft-ice-blue);
+}
 
 .radio input {
   width: 1.125rem;
@@ -1344,13 +1351,14 @@ button {
 }
 
 .radio:has(input:checked) {
-  border-color: var(--white);
-  background: var(--white);
+  border-color: var(--blue-600);
+  background: var(--bg-soft-ice-blue);
   color: var(--blue-900);
   font-weight: var(--weight-semibold);
+  box-shadow: 0 0 0 1px var(--blue-600);
 }
 
-.radio:has(input:focus-visible) { box-shadow: 0 0 0 3px rgb(255 255 255 / 0.45); }
+.radio:has(input:focus-visible) { box-shadow: 0 0 0 3px rgb(61 99 230 / 0.25); }
 
 .hp {
   position: absolute;
@@ -1360,27 +1368,33 @@ button {
   overflow: hidden;
 }
 
-/* White submit button on gradient panel (Contrast: #2F4CBF text on #FFFFFF = 5.8:1) */
+/* Minimal high-converting primary blue submit button */
 .form__submit {
   width: 100%;
-  background: var(--white);
-  color: var(--blue-700);
+  padding: 0.875rem 1.5rem;
+  background: linear-gradient(135deg, var(--blue-600) 0%, var(--blue-700) 100%);
+  color: var(--white);
   border: none;
-  font-weight: var(--weight-bold);
-  box-shadow: 0 4px 14px rgb(0 0 0 / 0.12);
+  border-radius: var(--radius-md);
+  font-family: var(--font-heading);
+  font-weight: var(--weight-semibold);
+  font-size: var(--text-base);
+  box-shadow: 0 4px 14px rgb(61 99 230 / 0.3);
+  transition: transform var(--dur-fast) var(--ease-out), box-shadow var(--dur-fast) var(--ease-out);
 }
 
 .form__submit:hover {
-  background: var(--blue-50);
-  color: var(--blue-800);
-  transform: translateY(-1px);
-  box-shadow: 0 6px 18px rgb(0 0 0 / 0.16);
+  background: linear-gradient(135deg, var(--blue-700) 0%, var(--blue-800) 100%);
+  color: var(--white);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgb(61 99 230 / 0.4);
 }
 
 .form__note {
-  font-size: var(--text-sm);
-  color: rgb(255 255 255 / 0.9);
+  font-size: var(--text-xs);
+  color: var(--ink-500);
   text-align: center;
+  margin-top: var(--space-2);
 }
 
 .form__error {
