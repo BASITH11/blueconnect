@@ -1108,55 +1108,123 @@ button {
 
 /* ==========================================================================
    10. How it works
-   Section Background: Cool Gray Blue (#F7FAFD)
-   Cards: Aqua White (#F3FFFF)
+   Ribbon bookmark cards with 3D step illustrations
    ========================================================================== */
 
 #how-it-works {
+  position: relative;
   background: var(--bg-cool-gray-blue, #F7FAFD);
   border-block: 1px solid rgb(255 255 255 / 0.8);
+  padding-block: clamp(3.5rem, 6vw, 5.5rem);
 }
 
-.steps { display: grid; gap: var(--space-8); }
-
-.step {
-  padding: var(--space-6);
-  background: var(--bg-aqua-white, #F3FFFF); /* Aqua White cards */
-  border: 1px solid var(--glass-border);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-glass);
+.eyebrow-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-4);
+  margin-bottom: var(--space-3);
 }
 
-.step__num {
+.eyebrow-divider::before,
+.eyebrow-divider::after {
+  content: "";
+  height: 1px;
+  width: clamp(2.5rem, 8vw, 6rem);
+  background: var(--color-border-strong);
+}
+
+.steps {
   display: grid;
-  place-items: center;
-  width: 2.5rem;
-  height: 2.5rem;
-  margin-bottom: var(--space-4);
-  border-radius: var(--radius-pill);
-  background: linear-gradient(135deg, var(--blue-500) 0%, var(--blue-700) 100%); /* Gradient badge */
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 860px) {
+  .steps {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.step-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: var(--white);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-xl);
+  box-shadow: 0 16px 40px rgb(38 34 60 / 0.08);
+  overflow: hidden;
+  transition: transform var(--dur-base) var(--ease-out), box-shadow var(--dur-base) var(--ease-out);
+}
+
+.step-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 24px 50px rgb(38 34 60 / 0.14);
+}
+
+/* Bookmark Ribbon Badge */
+.step__ribbon {
+  position: absolute;
+  top: 0;
+  left: 1.25rem;
+  width: 2.25rem;
+  height: 3rem;
+  background: linear-gradient(180deg, var(--blue-500) 0%, var(--blue-700) 100%);
   color: var(--white);
   font-family: var(--font-heading);
   font-weight: var(--weight-bold);
-  box-shadow: 0 4px 14px rgb(79 127 255 / 0.35); /* Soft glow */
+  font-size: 1.125rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 0.5rem;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 82%, 0 100%);
+  box-shadow: 0 4px 10px rgb(61 99 230 / 0.3);
+  z-index: 2;
+}
+
+.step__img-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(2.5rem, 4vw, 3rem) 1.5rem 1rem;
+  background: linear-gradient(180deg, rgb(242 249 255 / 0.5) 0%, rgb(255 255 255 / 0) 100%);
+}
+
+.step__img {
+  width: 100%;
+  max-width: 260px;
+  height: 160px;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 20px rgb(38 34 60 / 0.08));
+  transition: transform var(--dur-base) var(--ease-out);
+}
+
+.step-card:hover .step__img {
+  transform: scale(1.04);
+}
+
+.step__content {
+  padding: 1.25rem 1.5rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
 .step__title {
+  font-family: var(--font-heading);
   font-size: var(--text-xl);
-  font-weight: var(--weight-semibold);
+  font-weight: var(--weight-bold);
+  color: var(--color-heading);
+  letter-spacing: var(--tracking-tight);
 }
 
 .step__text {
   margin-top: var(--space-2);
   font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
   color: var(--ink-700);
-}
-
-@media (min-width: 800px) {
-  .steps {
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-6);
-  }
 }
 
 /* ==========================================================================
