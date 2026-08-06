@@ -837,7 +837,7 @@ button {
 
 @media (min-width: 880px) {
   .problem__inner {
-    grid-template-columns: 1.1fr 1fr;
+    grid-template-columns: 1.15fr 1fr;
   }
 }
 
@@ -849,15 +849,15 @@ button {
 
 .problem__img {
   width: 100%;
-  max-width: 580px;
+  max-width: 640px;
   height: auto;
   object-fit: contain;
-  filter: drop-shadow(0 14px 30px rgb(38 34 60 / 0.08));
+  filter: drop-shadow(0 14px 35px rgb(38 34 60 / 0.09));
   transition: transform var(--dur-base) var(--ease-out);
 }
 
 .problem__img:hover {
-  transform: translateY(-2px);
+  transform: translateY(-3px);
 }
 
 .problem__body {
