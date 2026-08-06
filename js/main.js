@@ -124,6 +124,12 @@
         return;
       }
 
+      // If action is a direct Formspree email URL (not /f/ID), use native submit
+      if (form.action.indexOf('/f/') === -1) {
+        form.submit();
+        return;
+      }
+
       if (submitBtn) {
         submitBtn.disabled = true;
         submitBtn.textContent = 'Sending…';
