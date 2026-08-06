@@ -827,7 +827,12 @@ button {
   color: var(--ink-700);
 }
 
-/* Problem section: 2-column layout with illustration on left, copy on right */
+/* Problem section: 2-column layout with Soft Ice Blue (#F2F9FF) background */
+.problem {
+  background: var(--ice-blue, #F2F9FF);
+  border-block: 1px solid rgb(255 255 255 / 0.8);
+}
+
 .problem__inner {
   display: grid;
   gap: clamp(2rem, 4vw, 4rem);

@@ -22,6 +22,9 @@
   --panel-grad: linear-gradient(135deg, #7BB4C0 0%, #6B8FD4 55%, #5C7BD0 100%);
   --panel-field-bg: rgb(255 255 255 / 0.92);
 
+  /* ---- Soft Ice Blue ---- */
+  --ice-blue: #F2F9FF;
+
   /* ---- Depth on a tinted field ---- */
   --shadow-glass: 0 2px 8px rgb(38 34 60 / 0.06),
                   0 16px 40px rgb(38 34 60 / 0.10);
