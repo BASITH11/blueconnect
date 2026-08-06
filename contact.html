@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Contact Us — BlueConnect</title>
+  <meta name="description" content="Contact BlueWhyte Software Solutions for BlueConnect support, inquiries, and business onboarding.">
+  <link rel="canonical" href="https://blueconnect.co.in/contact.html">
+  <meta name="theme-color" content="#4F7FFF">
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Plus+Jakarta+Sans:wght@600;700&display=swap">
+
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body id="top">
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Header / Nav -->
+  <header class="nav" id="nav">
+    <div class="nav__inner container">
+      <a class="nav__brand" href="index.html">BlueConnect</a>
+
+      <button class="nav__toggle" type="button" id="nav-toggle"
+              aria-expanded="false" aria-controls="nav-menu" aria-label="Open menu">
+        <svg class="icon-open" width="24" height="24" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <path d="M4 7h16M4 12h16M4 17h16"/>
+        </svg>
+        <svg class="icon-close" width="24" height="24" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <path d="M6 6l12 12M18 6L6 18"/>
+        </svg>
+      </button>
+
+      <div class="nav__menu" id="nav-menu">
+        <nav class="nav__links" aria-label="Primary">
+          <a href="index.html#features">Features</a>
+          <a href="index.html#how-it-works">How it works</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <div class="nav__actions">
+          <a class="nav__signin" href="https://app.blueconnect.co.in">Sign in</a>
+          <a class="btn btn--primary btn--sm" href="#contact-form">Get started</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="policy-page">
+      <div class="container">
+        
+        <a class="back-link" href="index.html">
+          <span aria-hidden="true">←</span> Back to home
+        </a>
+
+        <article class="policy-card" style="margin-bottom: var(--space-10);">
+          <h1>Contact Us</h1>
+          <div class="policy-meta">
+            <span>BlueWhyte Software Solutions</span>
+            <span>•</span>
+            <span>Customer & Business Support</span>
+          </div>
+
+          <p>
+            Have questions about BlueConnect, onboarding your team, or managing your WhatsApp Business API setup? We're here to help.
+          </p>
+
+          <h2>Registered Entity Details</h2>
+          <p>
+            <strong>Legal Entity Name:</strong> BlueWhyte Software Solutions<br>
+            <strong>Support Email:</strong> <a href="mailto:support@blueconnect.co.in">support@blueconnect.co.in</a><br>
+            <strong>Data Protection Desk:</strong> <a href="mailto:privacy@blueconnect.co.in">privacy@blueconnect.co.in</a><br>
+            <strong>Response Time:</strong> Within 1 business day
+          </p>
+        </article>
+
+        <!-- Form Panel -->
+        <div class="form-panel form-wrap" id="contact-form">
+          <form class="form" id="lead-form" method="POST"
+                action="https://formspree.io/f/YOUR_FORM_ID">
+
+            <div class="form__row">
+              <div class="field">
+                <label class="field__label" for="business">
+                  Business name <span class="field__req" aria-hidden="true">*</span>
+                </label>
+                <input class="input" type="text" id="business" name="business"
+                       autocomplete="organization" required>
+              </div>
+
+              <div class="field">
+                <label class="field__label" for="name">
+                  Your name <span class="field__req" aria-hidden="true">*</span>
+                </label>
+                <input class="input" type="text" id="name" name="name"
+                       autocomplete="name" required>
+              </div>
+            </div>
+
+            <div class="form__row">
+              <div class="field">
+                <label class="field__label" for="email">
+                  Email <span class="field__req" aria-hidden="true">*</span>
+                </label>
+                <input class="input" type="email" id="email" name="email"
+                       autocomplete="email" required>
+              </div>
+
+              <div class="field">
+                <label class="field__label" for="phone">
+                  Phone number <span class="field__req" aria-hidden="true">*</span>
+                </label>
+                <input class="input" type="tel" id="phone" name="phone"
+                       autocomplete="tel" required>
+              </div>
+            </div>
+
+            <fieldset class="fieldset">
+              <legend class="legend">
+                Do you already have a WhatsApp Business API number?
+                <span class="field__req" aria-hidden="true">*</span>
+              </legend>
+              <div class="radios">
+                <label class="radio">
+                  <input type="radio" name="has_waba" value="Yes" required>
+                  <span>Yes</span>
+                </label>
+                <label class="radio">
+                  <input type="radio" name="has_waba" value="No — I need help getting one">
+                  <span>No — I need help getting one</span>
+                </label>
+              </div>
+            </fieldset>
+
+            <div class="field">
+              <label class="field__label" for="notes">Anything else we should know?</label>
+              <textarea class="textarea" id="notes" name="notes"
+                        placeholder="Optional"></textarea>
+            </div>
+
+            <div class="hp" aria-hidden="true">
+              <label for="_gotcha">Leave this field empty</label>
+              <input type="text" id="_gotcha" name="_gotcha" tabindex="-1" autocomplete="off">
+            </div>
+
+            <p class="form__error" id="form-error" role="alert"></p>
+
+            <button class="btn btn--primary btn--lg form__submit" type="submit">
+              Request access
+            </button>
+
+            <p class="form__note">
+              We'll only use these details to get in touch about setting you up.
+            </p>
+          </form>
+
+          <div class="confirm" id="form-confirm" role="status" tabindex="-1">
+            <span class="confirm__icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                   stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 6 9 17l-5-5"/>
+              </svg>
+            </span>
+            <h3 class="confirm__title">Thanks — we've got your details.</h3>
+            <p class="confirm__text">
+              Someone from our team will reach out within 1 business day to get you set up.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div>
+          <a class="footer__brand" href="index.html">BlueConnect</a>
+          <p class="footer__tag">
+            WhatsApp campaigns, shared inbox, and automation for growing businesses.
+          </p>
+        </div>
+
+        <nav class="footer__links" aria-label="Footer">
+          <a href="https://app.blueconnect.co.in">Sign in</a>
+          <a href="terms.html">Terms</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="refunds.html">Refunds</a>
+          <a href="shipping.html">Service Delivery</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+
+      <p class="footer__bottom">© 2026 BlueWhyte Software Solutions</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
