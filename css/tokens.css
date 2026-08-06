@@ -22,8 +22,15 @@
   --panel-grad: linear-gradient(135deg, #7BB4C0 0%, #6B8FD4 55%, #5C7BD0 100%);
   --panel-field-bg: rgb(255 255 255 / 0.92);
 
-  /* ---- Soft Ice Blue ---- */
-  --ice-blue: #F2F9FF;
+  /* ---- Page & Section Color Palette ---- */
+  --bg-soft-ice-blue:  #F2F9FF; /* Main page background */
+  --bg-light-cyan:     #EEFDFC; /* Feature sections */
+  --bg-mist-blue:      #F4F7FF; /* About section */
+  --bg-pale-lavender:  #F8F5FF; /* Testimonials */
+  --bg-aqua-white:     #F3FFFF; /* Cards & content areas */
+  --bg-cool-gray-blue: #F7FAFD; /* Alternate sections */
+  --bg-light-sky:      #EAF8FF; /* CTA backgrounds */
+  --bg-soft-mint-blue: #F1FCFB; /* Contact section */
 
   /* ---- Depth on a tinted field ---- */
   --shadow-glass: 0 2px 8px rgb(38 34 60 / 0.06),

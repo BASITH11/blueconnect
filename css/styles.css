@@ -29,7 +29,7 @@ body {
   font-weight: var(--weight-regular);
   line-height: var(--leading-relaxed);
   color: var(--color-text);
-  background: var(--bg-field);
+  background: var(--bg-soft-ice-blue, #F2F9FF);
   background-attachment: fixed;
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
@@ -827,9 +827,9 @@ button {
   color: var(--ink-700);
 }
 
-/* Problem section: 2-column layout with Soft Ice Blue (#F2F9FF) background */
+/* Problem / About section: Mist Blue (#F4F7FF) background */
 .problem {
-  background: var(--ice-blue, #F2F9FF);
+  background: var(--bg-mist-blue, #F4F7FF);
   border-block: 1px solid rgb(255 255 255 / 0.8);
 }
 
@@ -916,9 +916,14 @@ button {
 
 /* ==========================================================================
    9. Features
-   Frosted glass cards, SVG icon in periwinkle tile, translateY(-4px) hover.
-   CONSTRAINT: NO backdrop-filter on cards (expensive, speed required).
+   Feature Section Background: Light Cyan (#EEFDFC)
+   Cards: Aqua White (#F3FFFF)
    ========================================================================== */
+
+#features {
+  background: var(--bg-light-cyan, #EEFDFC);
+  border-block: 1px solid rgb(255 255 255 / 0.8);
+}
 
 .features {
   display: grid;
@@ -928,7 +933,7 @@ button {
 
 .card {
   padding: var(--space-6);
-  background: var(--glass-bg); /* Translucent white, NO backdrop-filter */
+  background: var(--bg-aqua-white, #F3FFFF); /* Aqua White cards */
   border: 1px solid var(--glass-border);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-glass);
@@ -965,14 +970,20 @@ button {
 
 /* ==========================================================================
    10. How it works
-   Gradient numbered badges with soft glow
+   Section Background: Cool Gray Blue (#F7FAFD)
+   Cards: Aqua White (#F3FFFF)
    ========================================================================== */
+
+#how-it-works {
+  background: var(--bg-cool-gray-blue, #F7FAFD);
+  border-block: 1px solid rgb(255 255 255 / 0.8);
+}
 
 .steps { display: grid; gap: var(--space-8); }
 
 .step {
   padding: var(--space-6);
-  background: var(--glass-bg);
+  background: var(--bg-aqua-white, #F3FFFF); /* Aqua White cards */
   border: 1px solid var(--glass-border);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-glass);
@@ -1011,9 +1022,15 @@ button {
 }
 
 /* ==========================================================================
-   11. Form panel
-   --panel-grad, --radius-xl, inputs at 0.92 white, white submit button
+   11. Form panel & Contact Section
+   Section Background: Soft Mint Blue (#F1FCFB)
+   Form Panel: --panel-grad (#7BB4C0 → #6B8FD4 → #5C7BD0)
    ========================================================================== */
+
+#contact {
+  background: var(--bg-soft-mint-blue, #F1FCFB);
+  border-block: 1px solid rgb(255 255 255 / 0.8);
+}
 
 .form-wrap {
   max-width: 40rem;
