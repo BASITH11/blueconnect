@@ -150,106 +150,117 @@
          ==================================================================== -->
     <section class="section" id="features">
       <div class="container">
-        <div class="section__head section__head--center">
-          <span class="eyebrow">Features</span>
-          <h2 class="section__title">Everything your team needs in one place</h2>
-        </div>
+        <div class="features-layout">
+          <!-- Corner brackets -->
+          <div class="corner-bracket corner-bracket--tl" aria-hidden="true"></div>
+          <div class="corner-bracket corner-bracket--tr" aria-hidden="true"></div>
+          <div class="corner-bracket corner-bracket--bl" aria-hidden="true"></div>
+          <div class="corner-bracket corner-bracket--br" aria-hidden="true"></div>
 
-        <div class="features">
+          <div class="features-grid-split">
+            <!-- Left Sticky Heading Column -->
+            <div class="features-sticky-col">
+              <span class="eyebrow">FEATURES</span>
+              <h2 class="section__title">Everything your team needs in one place</h2>
+              <p class="features-sub">One shared WhatsApp number, one team, no missed replies.</p>
+              <a class="features-cta-link" href="#contact">Get started <span aria-hidden="true">↗</span></a>
+            </div>
 
-          <article class="card">
-            <span class="card__icon" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                   stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M3 13h4l2 3h6l2-3h4"/>
-                <path d="M5 5h14l2 8v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4z"/>
-              </svg>
-            </span>
-            <h3 class="card__title">Shared inbox</h3>
-            <p class="card__text">
-              Every teammate sees the same conversations, in real time. Claim a chat, reply,
-              and never lose track of who's talking to whom.
-            </p>
-          </article>
+            <!-- Right Hairline Grid Box -->
+            <div class="features-grid-box">
+              <div class="features-hairline-grid">
 
-          <article class="card">
-            <span class="card__icon" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                   stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M3 11v2a1 1 0 0 0 1 1h2l4 4V6L6 10H4a1 1 0 0 0-1 1z"/>
-                <path d="M15 8.5a4.5 4.5 0 0 1 0 7"/>
-                <path d="M18 5.5a8.5 8.5 0 0 1 0 13"/>
-              </svg>
-            </span>
-            <h3 class="card__title">Campaigns</h3>
-            <p class="card__text">
-              Send real WhatsApp messages to your whole contact list — approved templates,
-              delivery tracking, and safe sending limits built in.
-            </p>
-          </article>
+                <article class="grid-card">
+                  <div class="grid-card__head">
+                    <span class="grid-card__icon" aria-hidden="true">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 13h4l2 3h6l2-3h4"/>
+                        <path d="M5 5h14l2 8v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4z"/>
+                      </svg>
+                    </span>
+                    <span class="grid-card__num">01</span>
+                  </div>
+                  <h3 class="grid-card__title">Shared inbox</h3>
+                  <p class="grid-card__text">Every teammate sees the same conversations, in real time. Claim a chat, reply, and never lose track of who's talking to whom.</p>
+                </article>
 
-          <article class="card">
-            <span class="card__icon" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                   stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M13 2 4 14h7l-1 8 9-12h-7z"/>
-              </svg>
-            </span>
-            <h3 class="card__title">Automation</h3>
-            <p class="card__text">
-              Set up keyword replies, welcome messages, and follow-ups that fire automatically —
-              so nothing waits on a human who's offline.
-            </p>
-          </article>
+                <article class="grid-card">
+                  <div class="grid-card__head">
+                    <span class="grid-card__icon" aria-hidden="true">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 11v2a1 1 0 0 0 1 1h2l4 4V6L6 10H4a1 1 0 0 0-1 1z"/>
+                        <path d="M15 8.5a4.5 4.5 0 0 1 0 7"/>
+                        <path d="M18 5.5a8.5 8.5 0 0 1 0 13"/>
+                      </svg>
+                    </span>
+                    <span class="grid-card__num">02</span>
+                  </div>
+                  <h3 class="grid-card__title">Campaigns</h3>
+                  <p class="grid-card__text">Send real WhatsApp messages to your whole contact list — approved templates, delivery tracking, and safe sending limits built in.</p>
+                </article>
 
-          <article class="card">
-            <span class="card__icon" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                   stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M3 7a2 2 0 0 1 2-2h11"/>
-                <rect x="3" y="7" width="18" height="12" rx="2.5"/>
-                <path d="M16.5 13h1.5"/>
-              </svg>
-            </span>
-            <h3 class="card__title">Clear billing</h3>
-            <p class="card__text">
-              See exactly what you're spending, per message, with a simple prepaid wallet —
-              no surprise invoices.
-            </p>
-          </article>
+                <article class="grid-card">
+                  <div class="grid-card__head">
+                    <span class="grid-card__icon" aria-hidden="true">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M13 2 4 14h7l-1 8 9-12h-7z"/>
+                      </svg>
+                    </span>
+                    <span class="grid-card__num">03</span>
+                  </div>
+                  <h3 class="grid-card__title">Automation</h3>
+                  <p class="grid-card__text">Set up keyword replies, welcome messages, and follow-ups that fire automatically — so nothing waits on a human who's offline.</p>
+                </article>
 
-          <article class="card">
-            <span class="card__icon" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                   stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="3" y="3" width="7" height="7" rx="2"/>
-                <rect x="14" y="3" width="7" height="7" rx="2"/>
-                <rect x="3" y="14" width="7" height="7" rx="2"/>
-                <path d="M17.5 14.5v6M14.5 17.5h6"/>
-              </svg>
-            </span>
-            <h3 class="card__title">Built for your systems</h3>
-            <p class="card__text">
-              Already have a WhatsApp Business number, or a business system like an ERP or POS?
-              BlueConnect connects to what you already run.
-            </p>
-          </article>
+                <article class="grid-card">
+                  <div class="grid-card__head">
+                    <span class="grid-card__icon" aria-hidden="true">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 7a2 2 0 0 1 2-2h11"/>
+                        <rect x="3" y="7" width="18" height="12" rx="2.5"/>
+                        <path d="M16.5 13h1.5"/>
+                      </svg>
+                    </span>
+                    <span class="grid-card__num">04</span>
+                  </div>
+                  <h3 class="grid-card__title">Clear billing</h3>
+                  <p class="grid-card__text">See exactly what you're spending, per message, with a simple prepaid wallet — no surprise invoices.</p>
+                </article>
 
-          <article class="card">
-            <span class="card__icon" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                   stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="9"/>
-                <path d="M12 7v5l3 2"/>
-              </svg>
-            </span>
-            <h3 class="card__title">Real-time, always</h3>
-            <p class="card__text">
-              New messages show up instantly for your whole team — no refreshing, no polling,
-              no missed replies.
-            </p>
-          </article>
+                <article class="grid-card">
+                  <div class="grid-card__head">
+                    <span class="grid-card__icon" aria-hidden="true">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="3" width="7" height="7" rx="2"/>
+                        <rect x="14" y="3" width="7" height="7" rx="2"/>
+                        <rect x="3" y="14" width="7" height="7" rx="2"/>
+                        <path d="M17.5 14.5v6M14.5 17.5h6"/>
+                      </svg>
+                    </span>
+                    <span class="grid-card__num">05</span>
+                  </div>
+                  <h3 class="grid-card__title">Built for your systems</h3>
+                  <p class="grid-card__text">Already have a WhatsApp Business number, or a business system like an ERP or POS? BlueConnect connects to what you already run.</p>
+                </article>
 
+                <article class="grid-card">
+                  <div class="grid-card__head">
+                    <span class="grid-card__icon" aria-hidden="true">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="9"/>
+                        <path d="M12 7v5l3 2"/>
+                      </svg>
+                    </span>
+                    <span class="grid-card__num">06</span>
+                  </div>
+                  <h3 class="grid-card__title">Real-time, always</h3>
+                  <p class="grid-card__text">New messages show up instantly for your whole team — no refreshing, no polling, no missed replies.</p>
+                </article>
+
+              </div>
+            </div>
+
+          </div>
         </div>
       </div>
     </section>
