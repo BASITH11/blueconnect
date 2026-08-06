@@ -1465,7 +1465,7 @@ button {
   display: none;
   padding: var(--space-6) var(--space-4);
   text-align: center;
-  color: var(--white);
+  color: var(--color-heading);
 }
 
 .confirm.is-visible { display: block; }
@@ -1479,17 +1479,27 @@ button {
   height: 3.5rem;
   margin: 0 auto var(--space-5);
   border-radius: var(--radius-pill);
-  background: var(--white);
-  color: var(--green-600);
+  background: #DCFCE7;
+  color: #15803D;
+  box-shadow: 0 4px 14px rgb(34 197 94 / 0.2);
 }
 
-.confirm__title { font-size: var(--text-2xl); color: var(--white); }
+.confirm__title {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-weight: var(--weight-bold);
+  color: var(--color-heading);
+  letter-spacing: var(--tracking-tight);
+}
 
 .confirm__text {
-  max-width: 38ch;
-  margin: var(--space-3) auto 0;
-  color: rgb(255 255 255 / 0.9);
+  margin-top: var(--space-2);
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
+  color: var(--ink-700);
 }
+
+
 
 /* ==========================================================================
    12. Footer
