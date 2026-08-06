@@ -794,8 +794,8 @@ button {
 .section { padding-block: var(--section-py); }
 
 .section--alt {
-  background: rgb(255 255 255 / 0.15);
-  border-block: 1px solid var(--glass-border);
+  background: transparent;
+  border-block: none;
 }
 
 .section--tint { background: transparent; }
