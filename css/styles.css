@@ -830,13 +830,13 @@ button {
 /* Problem section: 2-column layout with illustration on left, copy on right */
 .problem__inner {
   display: grid;
-  gap: clamp(2rem, 5vw, 4rem);
-  align-items: stretch;
+  gap: clamp(2rem, 4vw, 4rem);
+  align-items: center;
 }
 
 @media (min-width: 840px) {
   .problem__inner {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.35fr 1fr;
   }
 }
 
@@ -845,22 +845,22 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
   width: 100%;
 }
 
 .problem__img {
   width: 100%;
-  height: 100%;
-  max-height: 100%;
+  max-width: 780px;
+  height: auto;
   object-fit: contain;
-  object-position: center;
+  transform: scale(1.18);
+  transform-origin: center center;
   filter: drop-shadow(0 14px 30px rgb(38 34 60 / 0.08));
   transition: transform var(--dur-base) var(--ease-out);
 }
 
 .problem__img:hover {
-  transform: translateY(-3px);
+  transform: scale(1.21) translateY(-3px);
 }
 
 .problem__copy {
