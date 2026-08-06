@@ -129,17 +129,37 @@
         submitBtn.textContent = 'Sending…';
       }
 
-      fetch(form.action, {
+      var formData = new FormData(form);
+      var payload = {};
+      formData.forEach(function (value, key) {
+        payload[key] = value;
+      });
+
+      var targetUrl = form.getAttribute('action') || '/api/lead';
+      if (targetUrl.indexOf('http') !== 0) {
+        if (window.location.protocol === 'file:') {
+          targetUrl = 'http://localhost:3000' + targetUrl;
+        }
+      }
+
+      fetch(targetUrl, {
         method: 'POST',
-        body: new FormData(form),
-        headers: { Accept: 'application/json' }
+        body: JSON.stringify(payload),
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        }
       })
         .then(function (response) {
           if (!response.ok) throw new Error('Request failed: ' + response.status);
           return response.json();
         })
-        .then(function () {
-          showConfirm();
+        .then(function (data) {
+          if (data && data.success) {
+            showConfirm();
+          } else {
+            fail(data.message || 'Something went wrong sending that. Please try again.');
+          }
         })
         .catch(function () {
           fail('Something went wrong sending that. Please try again in a moment.');

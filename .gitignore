@@ -1,6 +1,10 @@
 # Exclude Markdown files from Git per user directive
 *.md
 
+# Node.js & Environment secrets
+node_modules/
+.env
+
 # System files
 .DS_Store
 Thumbs.db
