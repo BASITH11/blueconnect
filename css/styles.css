@@ -1020,7 +1020,7 @@ button {
   border-radius: 0;
   overflow: hidden;
   background: rgb(255 255 255 / 0.75);
-  box-shadow: var(--shadow-glass);
+  box-shadow: none;
 }
 
 @supports (backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px)) {
