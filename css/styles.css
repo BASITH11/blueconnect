@@ -920,7 +920,7 @@ button {
 
 #features {
   position: relative;
-  background: url('../assets/img/features_bg.png') center/cover no-repeat, var(--bg-light-cyan, #EEFDFC);
+  background: var(--bg-light-cyan, #EEFDFC);
   border-block: 1px solid rgb(255 255 255 / 0.8);
   padding-block: clamp(3.5rem, 6vw, 5.5rem);
 }
@@ -1017,7 +1017,7 @@ button {
 /* Right Hairline Grid Container */
 .features-grid-box {
   border: 1px solid var(--glass-border);
-  border-radius: var(--radius-xl);
+  border-radius: 0;
   overflow: hidden;
   background: rgb(255 255 255 / 0.75);
   box-shadow: var(--shadow-glass);
