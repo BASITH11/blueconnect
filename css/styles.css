@@ -922,12 +922,17 @@ button {
   position: relative;
   background: var(--bg-light-cyan, #EEFDFC);
   border-block: 1px solid rgb(255 255 255 / 0.8);
-  padding-block: clamp(3.5rem, 6vw, 5.5rem);
+  padding-block: clamp(1.25rem, 2.5vw, 2rem);
+}
+
+#features .container {
+  max-width: 100%;
+  padding-inline: clamp(1rem, 3vw, 3rem);
 }
 
 .features-layout {
   position: relative;
-  padding: clamp(0.75rem, 1.5vw, 1.25rem);
+  padding: clamp(0.5rem, 1vw, 1rem);
 }
 
 /* Corner bracket accents */
