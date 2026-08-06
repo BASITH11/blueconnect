@@ -487,12 +487,10 @@ button {
   animation-delay: 0.6s;
 }
 
-.float-bubble__icon {
-  font-size: 0.9rem;
-}
-
-.float-bubble__icon--green {
-  color: #10B981;
+.float-bubble__svg {
+  display: inline-block;
+  flex-shrink: 0;
+  vertical-align: middle;
 }
 
 .float-bubble__avatar {
