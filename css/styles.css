@@ -922,8 +922,7 @@ button {
 
 #features {
   position: relative;
-  background: var(--bg-light-cyan, #EEFDFC) url('../assets/img/circuit_tangled_wires.png') center/cover no-repeat;
-  background-blend-mode: multiply;
+  background: url('../assets/img/features_bg.png') center/cover no-repeat, var(--bg-light-cyan, #EEFDFC);
   border-block: 1px solid rgb(255 255 255 / 0.8);
   padding-block: clamp(4rem, 7vw, 6.5rem);
 }
