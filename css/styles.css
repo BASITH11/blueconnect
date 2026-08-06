@@ -1230,7 +1230,7 @@ button {
 /* ==========================================================================
    11. Form panel & Contact Section
    Section Background: Soft Mint Blue (#F1FCFB)
-   Minimal Standard Form Card
+   2-Column Layout with Sharp Corners (border-radius: 0)
    ========================================================================== */
 
 #contact {
@@ -1240,13 +1240,65 @@ button {
   padding-block: clamp(3.5rem, 6vw, 5.5rem);
 }
 
+.contact-grid {
+  display: grid;
+  gap: clamp(2rem, 4vw, 3.5rem);
+  align-items: start;
+}
+
+@media (min-width: 840px) {
+  .contact-grid {
+    grid-template-columns: 1fr 1.25fr;
+  }
+}
+
+.contact-copy {
+  padding-top: var(--space-2);
+}
+
+.contact-copy .section__lede {
+  margin-top: var(--space-3);
+  font-size: clamp(1rem, 1.2vw, 1.125rem);
+  line-height: var(--leading-relaxed);
+  color: var(--ink-700);
+}
+
+.contact-bullets {
+  display: grid;
+  gap: var(--space-3);
+  margin-top: var(--space-6);
+}
+
+.contact-bullet {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-family: var(--font-heading);
+  font-weight: var(--weight-medium);
+  font-size: var(--text-base);
+  color: var(--color-heading);
+}
+
+.bullet-icon {
+  display: grid;
+  place-items: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: var(--radius-pill);
+  background: var(--blue-100);
+  color: var(--blue-600);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-bold);
+  flex-shrink: 0;
+}
+
 .form-wrap {
-  max-width: 36rem;
-  margin-inline: auto;
-  padding: clamp(1.75rem, 4vw, 2.75rem);
+  width: 100%;
+  max-width: 100%;
+  padding: clamp(1.5rem, 3.5vw, 2.5rem);
   background: rgb(255 255 255 / 0.95);
   border: 1px solid var(--glass-border);
-  border-radius: var(--radius-xl);
+  border-radius: 0;
   box-shadow: 0 16px 40px rgb(38 34 60 / 0.06);
 }
 
@@ -1287,7 +1339,7 @@ button {
   color: var(--ink-900);
   background: var(--white);
   border: 1.5px solid var(--color-border-strong);
-  border-radius: var(--radius-md);
+  border-radius: 0;
   box-shadow: inset 0 1px 2px rgb(0 0 0 / 0.03);
   transition: border-color var(--dur-fast) var(--ease-out),
               box-shadow var(--dur-fast) var(--ease-out);
@@ -1332,7 +1384,7 @@ button {
   color: var(--ink-800);
   background: var(--white);
   border: 1.5px solid var(--color-border-strong);
-  border-radius: var(--radius-md);
+  border-radius: 0;
   cursor: pointer;
   transition: border-color var(--dur-fast) var(--ease-out),
               background-color var(--dur-fast) var(--ease-out);
@@ -1375,7 +1427,7 @@ button {
   background: linear-gradient(135deg, var(--blue-600) 0%, var(--blue-700) 100%);
   color: var(--white);
   border: none;
-  border-radius: var(--radius-md);
+  border-radius: 0;
   font-family: var(--font-heading);
   font-weight: var(--weight-semibold);
   font-size: var(--text-base);

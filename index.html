@@ -325,113 +325,133 @@
          Captures a lead and notifies the team. It does NOT create an account,
          a tenant, a connection, or send any WhatsApp message.
          ==================================================================== -->
-    <section class="section section--tint" id="contact">
+    <section class="section" id="contact">
       <div class="container">
-        <div class="section__head section__head--center">
-          <h2 class="section__title">Ready to get started?</h2>
-          <p class="section__lede">
-            Tell us a bit about your business and we'll reach out to set you up.
-          </p>
-        </div>
+        <div class="contact-grid">
 
-        <div class="form-panel form-wrap">
-
-          <!-- TODO(config): replace YOUR_FORM_ID with the real Formspree endpoint
-               before launch. Until then, submitting shows an honest error rather
-               than a fake success. See open-questions.md #1. -->
-          <form class="form" id="lead-form" method="POST"
-                action="https://formspree.io/f/YOUR_FORM_ID">
-
-            <div class="form__row">
-              <div class="field">
-                <label class="field__label" for="business">
-                  Business name <span class="field__req" aria-hidden="true">*</span>
-                </label>
-                <input class="input" type="text" id="business" name="business"
-                       autocomplete="organization" required>
-              </div>
-
-              <div class="field">
-                <label class="field__label" for="name">
-                  Your name <span class="field__req" aria-hidden="true">*</span>
-                </label>
-                <input class="input" type="text" id="name" name="name"
-                       autocomplete="name" required>
-              </div>
-            </div>
-
-            <div class="form__row">
-              <div class="field">
-                <label class="field__label" for="email">
-                  Email <span class="field__req" aria-hidden="true">*</span>
-                </label>
-                <input class="input" type="email" id="email" name="email"
-                       autocomplete="email" required>
-              </div>
-
-              <div class="field">
-                <label class="field__label" for="phone">
-                  Phone number <span class="field__req" aria-hidden="true">*</span>
-                </label>
-                <input class="input" type="tel" id="phone" name="phone"
-                       autocomplete="tel" required>
-              </div>
-            </div>
-
-            <fieldset class="fieldset">
-              <legend class="legend">
-                Do you already have a WhatsApp Business API number?
-                <span class="field__req" aria-hidden="true">*</span>
-              </legend>
-              <div class="radios">
-                <label class="radio">
-                  <input type="radio" name="has_waba" value="Yes" required>
-                  <span>Yes</span>
-                </label>
-                <label class="radio">
-                  <input type="radio" name="has_waba" value="No — I need help getting one">
-                  <span>No — I need help getting one</span>
-                </label>
-              </div>
-            </fieldset>
-
-            <div class="field">
-              <label class="field__label" for="notes">Anything else we should know?</label>
-              <textarea class="textarea" id="notes" name="notes"
-                        placeholder="Optional"></textarea>
-            </div>
-
-            <!-- Honeypot: bots fill it, humans never see it. `_gotcha` is the name
-                 Formspree filters on server-side, so this works with or without JS. -->
-            <div class="hp" aria-hidden="true">
-              <label for="_gotcha">Leave this field empty</label>
-              <input type="text" id="_gotcha" name="_gotcha" tabindex="-1" autocomplete="off">
-            </div>
-
-            <p class="form__error" id="form-error" role="alert"></p>
-
-            <button class="btn btn--primary btn--lg form__submit" type="submit">
-              Request access
-            </button>
-
-            <p class="form__note">
-              We'll only use these details to get in touch about setting you up.
+          <!-- Left Column: Copy & Headings -->
+          <div class="contact-copy">
+            <span class="eyebrow">GET STARTED</span>
+            <h2 class="section__title">Ready to get started?</h2>
+            <p class="section__lede">
+              Tell us a bit about your business and we'll reach out to set you up.
             </p>
-          </form>
-
-          <div class="confirm" id="form-confirm" role="status" tabindex="-1">
-            <span class="confirm__icon" aria-hidden="true">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                   stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M20 6 9 17l-5-5"/>
-              </svg>
-            </span>
-            <h3 class="confirm__title">Thanks — we've got your details.</h3>
-            <p class="confirm__text">
-              Someone from our team will reach out within 1 business day to get you set up.
-            </p>
+            <div class="contact-bullets">
+              <div class="contact-bullet">
+                <span class="bullet-icon" aria-hidden="true">✓</span>
+                <span>Bring your existing WhatsApp Business number</span>
+              </div>
+              <div class="contact-bullet">
+                <span class="bullet-icon" aria-hidden="true">✓</span>
+                <span>Shared team inbox with live agent syncing</span>
+              </div>
+              <div class="contact-bullet">
+                <span class="bullet-icon" aria-hidden="true">✓</span>
+                <span>Automated campaigns & keyword replies built in</span>
+              </div>
+            </div>
           </div>
 
+          <!-- Right Column: Form Panel -->
+          <div class="form-panel form-wrap">
+
+            <!-- TODO(config): replace YOUR_FORM_ID with the real Formspree endpoint
+                 before launch. Until then, submitting shows an honest error rather
+                 than a fake success. See open-questions.md #1. -->
+            <form class="form" id="lead-form" method="POST"
+                  action="https://formspree.io/f/YOUR_FORM_ID">
+
+              <div class="form__row">
+                <div class="field">
+                  <label class="field__label" for="business">
+                    Business name <span class="field__req" aria-hidden="true">*</span>
+                  </label>
+                  <input class="input" type="text" id="business" name="business"
+                         autocomplete="organization" required>
+                </div>
+
+                <div class="field">
+                  <label class="field__label" for="name">
+                    Your name <span class="field__req" aria-hidden="true">*</span>
+                  </label>
+                  <input class="input" type="text" id="name" name="name"
+                         autocomplete="name" required>
+                </div>
+              </div>
+
+              <div class="form__row">
+                <div class="field">
+                  <label class="field__label" for="email">
+                    Email <span class="field__req" aria-hidden="true">*</span>
+                  </label>
+                  <input class="input" type="email" id="email" name="email"
+                         autocomplete="email" required>
+                </div>
+
+                <div class="field">
+                  <label class="field__label" for="phone">
+                    Phone number <span class="field__req" aria-hidden="true">*</span>
+                  </label>
+                  <input class="input" type="tel" id="phone" name="phone"
+                         autocomplete="tel" required>
+                </div>
+              </div>
+
+              <fieldset class="fieldset">
+                <legend class="legend">
+                  Do you already have a WhatsApp Business API number?
+                  <span class="field__req" aria-hidden="true">*</span>
+                </legend>
+                <div class="radios">
+                  <label class="radio">
+                    <input type="radio" name="has_waba" value="Yes" required>
+                    <span>Yes</span>
+                  </label>
+                  <label class="radio">
+                    <input type="radio" name="has_waba" value="No — I need help getting one">
+                    <span>No — I need help getting one</span>
+                  </label>
+                </div>
+              </fieldset>
+
+              <div class="field">
+                <label class="field__label" for="notes">Anything else we should know?</label>
+                <textarea class="textarea" id="notes" name="notes"
+                          placeholder="Optional"></textarea>
+              </div>
+
+              <!-- Honeypot: bots fill it, humans never see it. `_gotcha` is the name
+                   Formspree filters on server-side, so this works with or without JS. -->
+              <div class="hp" aria-hidden="true">
+                <label for="_gotcha">Leave this field empty</label>
+                <input type="text" id="_gotcha" name="_gotcha" tabindex="-1" autocomplete="off">
+              </div>
+
+              <p class="form__error" id="form-error" role="alert"></p>
+
+              <button class="btn btn--primary btn--lg form__submit" type="submit">
+                Request access
+              </button>
+
+              <p class="form__note">
+                We'll only use these details to get in touch about setting you up.
+              </p>
+            </form>
+
+            <div class="confirm" id="form-confirm" role="status" tabindex="-1">
+              <span class="confirm__icon" aria-hidden="true">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                     stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 6 9 17l-5-5"/>
+                </svg>
+              </span>
+              <h3 class="confirm__title">Thanks — we've got your details.</h3>
+              <p class="confirm__text">
+                Someone from our team will reach out within 1 business day to get you set up.
+              </p>
+            </div>
+
+          </div>
         </div>
       </div>
     </section>
