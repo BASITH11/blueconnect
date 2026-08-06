@@ -827,28 +827,84 @@ button {
   color: var(--ink-700);
 }
 
-/* Problem: clean normal section background without cards or images */
-.problem__body {
-  max-width: var(--container-narrow);
-  margin-inline: auto;
-  padding-block: clamp(1.5rem, 3vw, 2.5rem);
-  background: transparent;
-  border: none;
-  box-shadow: none;
+/* Problem: 2-column grid layout matching reference design */
+.problem__inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: center;
 }
 
-.problem__body p {
-  font-size: var(--text-lg);
+@media (min-width: 880px) {
+  .problem__inner {
+    grid-template-columns: 1.1fr 1fr;
+  }
+}
+
+.problem__visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.problem__img {
+  width: 100%;
+  max-width: 580px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 14px 30px rgb(38 34 60 / 0.08));
+  transition: transform var(--dur-base) var(--ease-out);
+}
+
+.problem__img:hover {
+  transform: translateY(-2px);
+}
+
+.problem__body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.problem__body .section__title {
+  font-size: clamp(1.85rem, 3.2vw, 2.75rem);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-heading);
+  line-height: 1.2;
+}
+
+.problem__lead {
+  margin-top: var(--space-4);
+  font-size: var(--text-md);
   line-height: var(--leading-relaxed);
   color: var(--ink-700);
 }
 
-.problem__body h2 + p { margin-top: var(--space-5); }
-
-.problem__body p + p {
-  margin-top: var(--space-6);
+.problem__solution {
+  margin-top: var(--space-5);
+  font-size: var(--text-md);
+  line-height: var(--leading-relaxed);
   color: var(--color-heading);
+}
+
+.problem__link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: var(--space-6);
+  font-family: var(--font-heading);
   font-weight: var(--weight-semibold);
+  font-size: var(--text-base);
+  color: var(--blue-600);
+  text-decoration: none;
+  transition: color var(--dur-fast) var(--ease-out), transform var(--dur-fast) var(--ease-out);
+}
+
+.problem__link:hover {
+  color: var(--blue-700);
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
 
 /* ==========================================================================
