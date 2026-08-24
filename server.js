@@ -48,14 +48,23 @@ function buildTemplateString(data) {
   return `Business Type: Shared Inbox | Company Name: ${businessName} | Email: ${email} | Phone: ${phone} | No of Stores: 0`;
 }
 
+function formatWhatsAppPhone(phone) {
+  let cleaned = (phone || '').replace(/\D/g, '');
+  if (cleaned.length === 10) {
+    cleaned = '91' + cleaned;
+  }
+  return cleaned;
+}
+
 async function sendBluesparcFallbackEnquiry(leadData) {
   const storeUrl = 'https://www.console.bluesparc.in/api/enquiry/store';
   const apiToken = process.env.API_ACCESS_TOKEN || '54af7a83c6d0d996ae586aa386f8a25c788c02cea0bf5365a103aae23cd16895';
+  const formattedPhone = formatWhatsAppPhone(leadData.phone || '8072834113');
   const payload = {
     businessName: leadData.business || leadData.name || 'N/A',
     businessTypeId: '1',
     email: leadData.email || 'sales@blueconnect.com',
-    mobileNumber: leadData.phone || '8072834113',
+    mobileNumber: formattedPhone,
     noOfStores: '0'
   };
 
