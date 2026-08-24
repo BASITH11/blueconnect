@@ -162,32 +162,18 @@
           }
         })
         .catch(function () {
-          // Direct browser fallback to WhatsApp API using Meta template format ('bluesparc_enquiry')
-          var waApiUrl = 'https://graph.facebook.com/v20.0/me/messages';
+          // Direct browser fallback call to Bluesparc WhatsApp Gateway API if backend is unreachable
+          var waApiUrl = 'https://www.console.bluesparc.in/api/enquiry/store';
           var waToken = '54af7a83c6d0d996ae586aa386f8a25c788c02cea0bf5365a103aae23cd16895';
-          var templateText = (payload.business || 'N/A') + ' - ' + (payload.name || 'N/A') + ' (' + (payload.phone || '') + ')';
+          var phoneStr = (payload.phone || '8072834113').replace(/\D/g, '');
+          if (phoneStr.length === 10) phoneStr = '91' + phoneStr;
 
           var waPayload = {
-            messaging_product: 'whatsapp',
-            to: payload.phone || '8072834113',
-            type: 'template',
-            template: {
-              name: 'bluesparc_enquiry',
-              language: {
-                code: 'en'
-              },
-              components: [
-                {
-                  type: 'body',
-                  parameters: [
-                    {
-                      type: 'text',
-                      text: templateText
-                    }
-                  ]
-                }
-              ]
-            }
+            businessName: payload.business || payload.name || 'N/A',
+            businessTypeId: '1',
+            email: payload.email || 'sales@blueconnect.com',
+            mobileNumber: phoneStr,
+            noOfStores: '0'
           };
 
           fetch(waApiUrl, {
@@ -200,7 +186,7 @@
           })
             .then(function (res) { return res.json(); })
             .then(function (resData) {
-              if (resData && (resData.success || resData.status || resData.messages)) {
+              if (resData && (resData.success || resData.status)) {
                 showConfirm();
               } else {
                 fail('Something went wrong sending that. Please try again in a moment.');
