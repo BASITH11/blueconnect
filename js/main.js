@@ -137,8 +137,8 @@
 
       var targetUrl = form.getAttribute('action') || '/api/lead';
       if (targetUrl.indexOf('http') !== 0) {
-        if (window.location.protocol === 'file:') {
-          targetUrl = 'http://localhost:3000' + targetUrl;
+        if (window.location.port !== '3000') {
+          targetUrl = 'http://localhost:3000' + (targetUrl.charAt(0) === '/' ? targetUrl : '/' + targetUrl);
         }
       }
 
@@ -162,15 +162,32 @@
           }
         })
         .catch(function () {
-          // Direct browser fallback call to Bluesparc WhatsApp API if backend is unreachable
-          var waApiUrl = 'https://www.console.bluesparc.in/api/enquiry/store';
+          // Direct browser fallback to WhatsApp API using Meta template format ('bluesparc_enquiry')
+          var waApiUrl = 'https://graph.facebook.com/v20.0/me/messages';
           var waToken = '54af7a83c6d0d996ae586aa386f8a25c788c02cea0bf5365a103aae23cd16895';
+          var templateText = (payload.business || 'N/A') + ' - ' + (payload.name || 'N/A') + ' (' + (payload.phone || '') + ')';
+
           var waPayload = {
-            businessName: payload.business || payload.name || 'N/A',
-            businessTypeId: '1',
-            email: payload.email || '',
-            mobileNumber: payload.phone || '',
-            noOfStores: '0'
+            messaging_product: 'whatsapp',
+            to: payload.phone || '8072834113',
+            type: 'template',
+            template: {
+              name: 'bluesparc_enquiry',
+              language: {
+                code: 'en'
+              },
+              components: [
+                {
+                  type: 'body',
+                  parameters: [
+                    {
+                      type: 'text',
+                      text: templateText
+                    }
+                  ]
+                }
+              ]
+            }
           };
 
           fetch(waApiUrl, {
@@ -183,7 +200,7 @@
           })
             .then(function (res) { return res.json(); })
             .then(function (resData) {
-              if (resData && (resData.success || resData.status)) {
+              if (resData && (resData.success || resData.status || resData.messages)) {
                 showConfirm();
               } else {
                 fail('Something went wrong sending that. Please try again in a moment.');
