@@ -162,7 +162,36 @@
           }
         })
         .catch(function () {
-          fail('Something went wrong sending that. Please try again in a moment.');
+          // Direct browser fallback call to Bluesparc WhatsApp API if backend is unreachable
+          var waApiUrl = 'https://www.console.bluesparc.in/api/enquiry/store';
+          var waToken = '54af7a83c6d0d996ae586aa386f8a25c788c02cea0bf5365a103aae23cd16895';
+          var waPayload = {
+            businessName: payload.business || payload.name || 'N/A',
+            businessTypeId: '1',
+            email: payload.email || '',
+            mobileNumber: payload.phone || '',
+            noOfStores: '0'
+          };
+
+          fetch(waApiUrl, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': 'Bearer ' + waToken
+            },
+            body: JSON.stringify(waPayload)
+          })
+            .then(function (res) { return res.json(); })
+            .then(function (resData) {
+              if (resData && (resData.success || resData.status)) {
+                showConfirm();
+              } else {
+                fail('Something went wrong sending that. Please try again in a moment.');
+              }
+            })
+            .catch(function () {
+              fail('Something went wrong sending that. Please try again in a moment.');
+            });
         })
         .then(function () {
           if (submitBtn) {

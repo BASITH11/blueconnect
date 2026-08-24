@@ -38,6 +38,37 @@ transporter.verify((error, success) => {
   }
 });
 
+// Helper to send WhatsApp Enquiry to Bluesparc API
+async function sendWhatsAppEnquiry(leadData) {
+  const baseUrl = process.env.WA_API_URL || 'https://www.console.bluesparc.in/api';
+  const token = process.env.WA_API_ACCESS_TOKEN || '54af7a83c6d0d996ae586aa386f8a25c788c02cea0bf5365a103aae23cd16895';
+  const endpoint = baseUrl.endsWith('/enquiry/store') ? baseUrl : `${baseUrl}/enquiry/store`;
+
+  const payload = {
+    businessName: leadData.business || leadData.name || 'N/A',
+    businessTypeId: '1',
+    email: leadData.email,
+    mobileNumber: leadData.phone,
+    noOfStores: '0'
+  };
+
+  try {
+    const response = await fetch(endpoint, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`
+      },
+      body: JSON.stringify(payload)
+    });
+    const data = await response.json();
+    console.log('✅ WhatsApp Enquiry API Response:', data);
+    return data;
+  } catch (err) {
+    console.error('❌ Failed to send WhatsApp Enquiry API request:', err.message);
+  }
+}
+
 // Lead Submission API Route
 app.post('/api/lead', async (req, res) => {
   try {
@@ -97,13 +128,25 @@ app.post('/api/lead', async (req, res) => {
       `
     };
 
-    await transporter.sendMail(mailOptions);
-    console.log(`✅ Lead email sent successfully to ${process.env.TO_EMAIL} for ${business}`);
+    // 1. Send Email Notification
+    try {
+      await transporter.sendMail(mailOptions);
+      console.log(`✅ Lead email sent successfully to ${process.env.TO_EMAIL} for ${business}`);
+    } catch (emailErr) {
+      console.error('⚠️ Lead email error:', emailErr.message);
+    }
 
-    return res.status(200).json({ success: true, message: 'Lead submitted successfully!' });
+    // 2. Send WhatsApp Message / Store Enquiry via Bluesparc API
+    const waResult = await sendWhatsAppEnquiry({ business, name, email, phone });
+
+    return res.status(200).json({
+      success: true,
+      message: 'Lead submitted successfully!',
+      waEnquiry: waResult
+    });
   } catch (error) {
-    console.error('❌ Failed to send lead email via Mailgun SMTP:', error);
-    return res.status(500).json({ success: false, message: 'Failed to send email. Please try again later.' });
+    console.error('❌ Failed to process lead submission:', error);
+    return res.status(500).json({ success: false, message: 'Failed to process lead. Please try again later.' });
   }
 });
 

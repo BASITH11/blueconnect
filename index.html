@@ -120,49 +120,53 @@
     </section>
 
     <!-- ====================================================================
-         Account Safety / Anti-blocking (Container-Free Clean Typography)
+         Account Safety / Anti-blocking (2-Column Layout: Left Copy, Right Image)
          ==================================================================== -->
-    <section class="section safety-section" id="account-safety">
-      <div class="container safety-content">
+    <section class="section safety" id="account-safety">
+      <div class="container safety__inner">
 
-        <div class="section__head section__head--center">
+        <!-- Left Column: Copy & Content -->
+        <div class="safety__copy">
           <span class="eyebrow">ACCOUNT SAFETY</span>
           <h2 class="section__title">Why does my WhatsApp keep getting blocked?</h2>
-          <p class="section__lede">Getting your number flagged for sending promotions?</p>
-        </div>
+          <p class="safety__lede">Getting your number flagged for sending promotions?</p>
 
-        <div class="safety-text-body">
-          <p class="safety-warning-text">
+          <p class="safety__text">
             If you're sending bulk messages through the regular WhatsApp Business app, or a tool that isn't connected to Meta's real, official API — you're not actually supposed to be doing that. Meta knows, and sooner or later, your number gets restricted or banned.
           </p>
 
-          <p class="safety-solution-text">
+          <p class="safety__solution">
             <strong>BlueConnect runs on Meta's genuine, approved WhatsApp Business Platform</strong> — the same official system used by real businesses at scale. That means:
           </p>
 
-          <ul class="safety-direct-list" role="list">
+          <ul class="safety__list" role="list">
             <li>
-              <span class="safety-bullet-icon" aria-hidden="true">✓</span>
+              <span class="safety__check" aria-hidden="true">✓</span>
               <span><strong>Your number is warmed up properly, not blasted from day one</strong> — new numbers ramp up their sending limits gradually, exactly the way Meta expects.</span>
             </li>
             <li>
-              <span class="safety-bullet-icon" aria-hidden="true">✓</span>
+              <span class="safety__check" aria-hidden="true">✓</span>
               <span><strong>We watch your number's health for you</strong> — if your quality rating starts to drop, sending automatically pauses before it becomes a ban, not after.</span>
             </li>
             <li>
-              <span class="safety-bullet-icon" aria-hidden="true">✓</span>
+              <span class="safety__check" aria-hidden="true">✓</span>
               <span><strong>You send within real, safe limits</strong> — no guessing how many messages you can send today without risking the number entirely.</span>
             </li>
           </ul>
 
-          <div class="safety-footer-action">
-            <p class="safety-footer-text">
+          <div class="safety__action">
+            <p class="safety__note">
               Don't have an official WhatsApp Business API account yet? No problem — we'll set one up for you. No technical setup on your end.
             </p>
-            <a class="btn btn--primary btn--lg" href="#contact">
+            <a class="btn btn--primary btn--md" href="#contact">
               Get started <span aria-hidden="true">↓</span>
             </a>
           </div>
+        </div>
+
+        <!-- Right Column: Visual Illustration -->
+        <div class="safety__visual">
+          <img class="safety__img" src="assets/img/account_safety_illustration.png" alt="Illustration of WhatsApp Account Protection and Official Meta Compliance" width="760" height="620">
         </div>
 
       </div>
