@@ -1882,8 +1882,8 @@ button {
   max-width: 680px;
   height: auto;
   object-fit: contain;
+  mix-blend-mode: multiply;
   border-radius: var(--radius-xl);
-  filter: drop-shadow(0 16px 35px rgb(38 34 60 / 0.12));
   transition: transform var(--dur-base) var(--ease-out);
 }
 
