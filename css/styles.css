@@ -1865,7 +1865,7 @@ button {
 
 @media (min-width: 840px) {
   .opt-in__inner {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.25fr 1fr;
   }
 }
 
@@ -1879,8 +1879,7 @@ button {
 
 .opt-in__img {
   width: 100%;
-  max-width: 520px;
-  max-height: 440px;
+  max-width: 720px;
   height: auto;
   object-fit: contain;
   border-radius: var(--radius-xl);
