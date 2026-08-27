@@ -1912,6 +1912,43 @@ button {
   color: var(--ink-700);
 }
 
+.opt-in__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3.5);
+  list-style: none;
+  padding: 0;
+  margin-top: var(--space-5);
+}
+
+.opt-in__list li {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  font-size: clamp(0.95rem, 1.1vw, 1.05rem);
+  line-height: var(--leading-relaxed);
+  color: var(--ink-700);
+}
+
+.opt-in__list li strong {
+  color: var(--ink-900);
+}
+
+.opt-in__check {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--blue-100, #E0F2FE);
+  color: var(--blue-600, #0284C7);
+  font-weight: 800;
+  font-size: 0.75rem;
+  margin-top: 2px;
+}
+
 /* Feature Card Micro-Visuals */
 .card-code-snippet {
   margin-top: var(--space-3);
