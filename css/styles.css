@@ -1912,6 +1912,62 @@ button {
   color: var(--ink-700);
 }
 
+/* Feature Card Micro-Visuals */
+.card-code-snippet {
+  margin-top: var(--space-3);
+  padding: 0.625rem 0.875rem;
+  background: var(--ink-950, #0B101D);
+  border-radius: var(--radius-md);
+  font-family: var(--font-mono, ui-monospace, SFMono-Regular, monospace);
+  font-size: 0.725rem;
+  line-height: 1.5;
+  color: #E2E8F0;
+  overflow-x: auto;
+}
+
+.code-diff {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.code-diff__del {
+  color: #F87171;
+  opacity: 0.85;
+}
+
+.code-diff__add {
+  color: #34D399;
+  font-weight: 600;
+}
+
+.card-flow-preview {
+  margin-top: var(--space-3);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.6rem;
+  background: var(--blue-50, #EFF6FF);
+  border: 1px solid var(--blue-200, #BFDBFE);
+  border-radius: var(--radius-md);
+  font-size: 0.7rem;
+  font-family: var(--font-mono, ui-monospace, SFMono-Regular, monospace);
+  color: var(--blue-800, #1E40AF);
+}
+
+.flow-node {
+  background: #FFFFFF;
+  padding: 2px 6px;
+  border-radius: 4px;
+  border: 1px solid var(--blue-200);
+  font-weight: 500;
+}
+
+.flow-arrow {
+  color: var(--blue-400);
+  font-size: 0.75rem;
+}
+
 /* Reduced Motion Override */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {

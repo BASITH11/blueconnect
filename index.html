@@ -285,6 +285,15 @@
                   </div>
                   <h3 class="grid-card__title">Build it visually, no code</h3>
                   <p class="grid-card__text">Drag and drop a real flow — send a message, wait, branch based on their reply, hand off to a teammate. Watch it run exactly the way you built it.</p>
+                  <div class="card-flow-preview" aria-hidden="true">
+                    <span class="flow-node">Send</span>
+                    <span class="flow-arrow">→</span>
+                    <span class="flow-node">Wait</span>
+                    <span class="flow-arrow">→</span>
+                    <span class="flow-node">Branch</span>
+                    <span class="flow-arrow">→</span>
+                    <span class="flow-node">Handoff</span>
+                  </div>
                 </article>
 
                 <article class="grid-card">
@@ -316,6 +325,12 @@
                   </div>
                   <h3 class="grid-card__title">Already integrated with Meta? Keep your code.</h3>
                   <p class="grid-card__text">If you're already calling WhatsApp's API directly, BlueConnect can be a drop-in replacement — change one URL, keep everything else exactly as it is. No rewrite required.</p>
+                  <div class="card-code-snippet" aria-hidden="true">
+                    <div class="code-diff">
+                      <span class="code-diff__del">- https://graph.facebook.com/v19.0/me/messages</span>
+                      <span class="code-diff__add">+ https://api.blueconnect.io/v1/messages</span>
+                    </div>
+                  </div>
                 </article>
 
                 <article class="grid-card">
