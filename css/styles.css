@@ -853,7 +853,7 @@ button {
 
 @media (min-width: 840px) {
   .problem__inner {
-    grid-template-columns: 1.35fr 1fr;
+    grid-template-columns: 1fr 1.35fr;
   }
 }
 
