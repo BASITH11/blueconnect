@@ -173,42 +173,23 @@
     </section>
 
     <!-- ====================================================================
-         Compliant Opt-in Section (Consent & Authorization)
+         Compliant Opt-in Section
          ==================================================================== -->
-    <section class="section optin" id="compliant-opt-in">
-      <div class="container optin__inner">
+    <section class="section opt-in" id="compliant-opt-in">
+      <div class="container opt-in__inner">
 
-        <!-- Left Column: Copy & Content -->
-        <div class="optin__copy">
-          <span class="eyebrow">COMPLIANT OPT-IN</span>
-          <h2 class="section__title">Built to message people the right way</h2>
-          <p class="optin__lede">
-            WhatsApp requires real consent before you send marketing messages — not just having someone's number.
-          </p>
-
-          <p class="optin__text">
-            BlueConnect includes a built-in opt-in flow, so new contacts are asked properly, automatically, before they ever receive a promotional message. No manual tracking, no guessing who's actually agreed to hear from you.
-          </p>
-
-          <div class="optin__highlights">
-            <div class="optin__chip">
-              <span class="optin__check" aria-hidden="true">✓</span>
-              <span>Automatic consent requests</span>
-            </div>
-            <div class="optin__chip">
-              <span class="optin__check" aria-hidden="true">✓</span>
-              <span>Zero manual opt-in tracking</span>
-            </div>
-            <div class="optin__chip">
-              <span class="optin__check" aria-hidden="true">✓</span>
-              <span>Verified Meta compliance</span>
-            </div>
-          </div>
+        <!-- Left Column: Visual Illustration -->
+        <div class="opt-in__visual">
+          <img class="opt-in__img" src="assets/img/opt_in_illustration.png" alt="Illustration of WhatsApp Compliant Opt-in Flow and User Consent" width="760" height="620">
         </div>
 
-        <!-- Right Column: Visual Illustration -->
-        <div class="optin__visual">
-          <img class="optin__img" src="assets/img/compliant_optin_illustration.png" alt="Illustration of WhatsApp Compliant Opt-In Consent Flow" width="760" height="620">
+        <!-- Right Column: Copy & Content -->
+        <div class="opt-in__copy">
+          <span class="eyebrow">COMPLIANT OPT-IN</span>
+          <h2 class="section__title">Built to message people the right way</h2>
+          <p class="opt-in__text">
+            WhatsApp requires real consent before you send marketing messages — not just having someone's number. BlueConnect includes a built-in opt-in flow, so new contacts are asked properly, automatically, before they ever receive a promotional message. No manual tracking, no guessing who's actually agreed to hear from you.
+          </p>
         </div>
 
       </div>
@@ -293,7 +274,7 @@
                   <p class="grid-card__text">Send real WhatsApp messages to your whole contact list — approved templates, delivery tracking, and safe sending limits built in.</p>
                 </article>
 
-                <article class="grid-card grid-card--visual">
+                <article class="grid-card">
                   <div class="grid-card__head">
                     <span class="grid-card__icon" aria-hidden="true">
                       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
@@ -304,13 +285,6 @@
                   </div>
                   <h3 class="grid-card__title">Build it visually, no code</h3>
                   <p class="grid-card__text">Drag and drop a real flow — send a message, wait, branch based on their reply, hand off to a teammate. Watch it run exactly the way you built it.</p>
-                  <div class="card-visual-pill">
-                    <span class="pill-step">Send MSG</span>
-                    <span class="pill-arrow">→</span>
-                    <span class="pill-step">Wait reply</span>
-                    <span class="pill-arrow">→</span>
-                    <span class="pill-step pill-step--accent">Assign Teammate</span>
-                  </div>
                 </article>
 
                 <article class="grid-card">
@@ -328,7 +302,7 @@
                   <p class="grid-card__text">See exactly what you're spending, per message, with a simple prepaid wallet — no surprise invoices.</p>
                 </article>
 
-                <article class="grid-card grid-card--code">
+                <article class="grid-card">
                   <div class="grid-card__head">
                     <span class="grid-card__icon" aria-hidden="true">
                       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
@@ -342,10 +316,6 @@
                   </div>
                   <h3 class="grid-card__title">Already integrated with Meta? Keep your code.</h3>
                   <p class="grid-card__text">If you're already calling WhatsApp's API directly, BlueConnect can be a drop-in replacement — change one URL, keep everything else exactly as it is. No rewrite required.</p>
-                  <div class="card-code-badge">
-                    <span class="code-line code-line--del">- graph.facebook.com/v19.0/messages</span>
-                    <span class="code-line code-line--add">+ api.blueconnect.com/v1/messages</span>
-                  </div>
                 </article>
 
                 <article class="grid-card">
@@ -366,7 +336,10 @@
                   <div class="grid-card__head">
                     <span class="grid-card__icon" aria-hidden="true">
                       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-                        <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/>
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                        <circle cx="9" cy="7" r="4"/>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
                       </svg>
                     </span>
                     <span class="grid-card__num">07</span>
